@@ -4,4 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('nguyenad92')
+    return render(request, 'index.html')
+
+def galery(request):
+    return render(request, 'galery.html')
