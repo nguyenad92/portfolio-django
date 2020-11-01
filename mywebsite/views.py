@@ -6,5 +6,5 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'index.html')
 
-def galery(request):
-    return render(request, 'galery.html')
+def gallery(request):
+    return render(request, 'gallery.html')

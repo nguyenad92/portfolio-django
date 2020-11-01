@@ -25,7 +25,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.nguyen-ad.com', 'nguyen-ad.com', '54.196.97.7']
+ALLOWED_HOSTS = ['www.nguyen-ad.com', 'nguyen-ad.com', 'localhost']
 
 
 # Application definition
