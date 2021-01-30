@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, UploadImage
 from django.views.generic import ListView, DetailView
+import os
+from django.conf import settings
+from django.templatetags.static import static
 # from django.http import HttpResponse
 
 # Create your views here.
@@ -25,10 +28,20 @@ def index(request):
     return render(request, 'index.html')
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    path = settings.MEDIA_ROOT
+    # img_list = os.listdir(path + '/images')
+    img_list = os.listdir(path)
+    context = {'images' : img_list}
+    return render(request, 'gallery.html', context)
 
 def youtube(request):
     return render(request, 'youtube.html')
 
 def test(request):
     return render(request, 'test.html')
+
+class GalleryPage(ListView):
+    model = UploadImage
+    print(type(UploadImage))
+    template_name = 'gallery.html'
+    context_object_name = 'images'
